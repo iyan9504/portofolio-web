@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio Website - Coming Soon">
+  <meta name="theme-color" content="#06b6d4">
+  <title>Portfolio Website - Coming Soon</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%2306b6d4'>W</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <style>
+    .coming-soon-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(100vh - 70px);
+      padding: 2rem;
+      margin-top: 70px;
+    }
+
+    .coming-soon-content {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 4rem 3rem;
+      max-width: 600px;
+      animation: fadeUp 0.8s ease-out forwards;
+    }
+
+    .coming-soon-icon {
+      font-size: 5rem;
+      margin-bottom: 1.5rem;
+      animation: floatIcon 3s ease-in-out infinite;
+    }
+
+    @keyframes floatIcon {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .coming-soon-content h1 {
+      font-size: 2.5rem;
+      color: #fff;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, #22d3ee, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .coming-soon-content p {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .coming-soon-badge {
+      display: inline-block;
+      background: rgba(34, 211, 238, 0.2);
+      border: 1px solid rgba(34, 211, 238, 0.5);
+      color: #22d3ee;
+      padding: 0.5rem 1.2rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    .coming-soon-content .back-btn {
+      display: inline-block;
+      background: rgba(6, 182, 212, 0.3);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      padding: 0.9rem 1.8rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid rgba(6, 182, 212, 0.5);
+      transition: all 0.3s ease;
+      margin-top: 2rem;
+    }
+
+    .coming-soon-content .back-btn:hover {
+      background: rgba(6, 182, 212, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(6, 182, 212, 0.2);
+    }
+
+    .loading-dots {
+      display: inline-block;
+      margin-top: 2rem;
+    }
+
+    .loading-dots span {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #22d3ee;
+      margin: 0 5px;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    .loading-dots span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .loading-dots span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    body.dark-mode .coming-soon-content {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    @media (max-width: 768px) {
+      .coming-soon-content {
+        padding: 3rem 2rem;
+      }
+
+      .coming-soon-content h1 {
+        font-size: 2rem;
+      }
+
+      .coming-soon-container {
+        min-height: calc(100vh - 60px);
+        margin-top: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <div class="logo-name">Andriyan Maulana</div>
+        <div class="logo-title">Creative Developer</div>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#hero">Home</a></li>
+        <li><a href="index.html#skills">Keahlian</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- COMING SOON -->
+  <div class="coming-soon-container">
+    <div class="coming-soon-content fade-up">
+      <div class="coming-soon-icon">💻</div>
+      <div class="coming-soon-badge">Teknologi & Coding</div>
+      <h1>Coming Soon</h1>
+      <p>Website portfolio personal dengan teknologi web terbaru sedang dalam pengembangan. Menampilkan project coding inovatif dengan design modern dan functional yang sempurna.</p>
+      
+      <div class="loading-dots">
+        <span></span><span></span><span></span>
+      </div>
+
+      <a href="index.html#projects" class="back-btn">← Kembali ke Projects</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

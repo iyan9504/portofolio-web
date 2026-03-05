@@ -1,89 +1,63 @@
-// Dark Mode Toggle
+// ====== DARK MODE TOGGLE ======
 const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
 const sunIcon = document.querySelector('.sun-icon');
 const moonIcon = document.querySelector('.moon-icon');
 
-// Check dark mode preference
+// Check for saved dark mode preference
 const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
 if (isDarkMode) {
-    body.classList.add('dark-mode');
-    sunIcon.style.display = 'none';
-    moonIcon.style.display = 'block';
+  document.body.classList.add('dark-mode');
+  sunIcon.style.display = 'none';
+  moonIcon.style.display = 'block';
 }
 
 themeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    const isDark = body.classList.contains('dark-mode');
-    localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
-    
-    // Toggle icon display
-    if (isDark) {
-        sunIcon.style.display = 'none';
-        moonIcon.style.display = 'block';
-    } else {
-        sunIcon.style.display = 'block';
-        moonIcon.style.display = 'none';
-    }
+  document.body.classList.toggle('dark-mode');
+
+  // Toggle icon dan save preference
+  if (document.body.classList.contains('dark-mode')) {
+    sunIcon.style.display = 'none';
+    moonIcon.style.display = 'block';
+    localStorage.setItem('darkMode', 'enabled');
+  } else {
+    sunIcon.style.display = 'block';
+    moonIcon.style.display = 'none';
+    localStorage.setItem('darkMode', 'disabled');
+  }
 });
 
-// Hamburger Menu Toggle
+// ====== HAMBURGER MENU ======
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 
-if (hamburger) {
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
-
-    // Tutup menu saat link diklik
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-        });
-    });
-}
-
-// Smooth scroll untuk semua link anchor
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth"
-        });
-    });
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  hamburger.classList.toggle('open');
 });
 
-// Animasi fade-in saat scroll
+// Close hamburger menu saat nav link diklik
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    navLinks.classList.remove('active');
+  });
+});
+
+// ====== SCROLL ANIMATIONS ======
 const faders = document.querySelectorAll('.fade-in, .fade-up');
 const options = {
-    threshold: 0.2
+  threshold: 0.1
 };
 
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            return;
-        }
-        entry.target.classList.add("appear");
-        appearOnScroll.unobserve(entry.target);
-    });
+const appearOnScroll = new IntersectionObserver(function(entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('appear');
+      appearOnScroll.unobserve(entry.target);
+    }
+  });
 }, options);
 
 faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-});
-
-// Navbar transparan berubah saat scroll
-const navbar = document.querySelector('.navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.style.background = "rgba(255,255,255,0.15)";
-        navbar.style.backdropFilter = "blur(15px)";
-    } else {
-        navbar.style.background = "rgba(255,255,255,0.08)";
-        navbar.style.backdropFilter = "blur(12px)";
-    }
+  appearOnScroll.observe(fader);
 });
