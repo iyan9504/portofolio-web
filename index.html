@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Andriyan - Android Developer profesional membangun aplikasi Kotlin & Jetpack Compose modern dan berfokus pada pengalaman pengguna">
+    <meta name="theme-color" content="#4f8dfd">
+    <meta property="og:title" content="Andriyan — Android Developer">
+    <meta property="og:description" content="Developer Android dengan pengalaman Kotlin, Jetpack Compose, Firebase, dan Clean Architecture">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <title>Andriyan — Android Developer</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%234f8dfd'>A</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+</head>
+<body>
+
+    <!-- NAVBAR TRANSPARAN -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Andriyan.dev</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero" id="hero">
+        <div class="hero-content fade-up">
+            <h1>Hi, saya <span>Andriyan</span></h1>
+            <p>Android Developer yang membangun aplikasi modern, cepat, dan berfokus pada pengalaman pengguna.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary">Lihat Project</a>
+                <a href="https://wa.me/62880026311990" target="_blank" class="btn-outline">Hubungi Saya</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SKILLS -->
+    <section class="skills fade-in" id="skills">
+        <h2>Keahlian Utama</h2>
+        <div class="skill-grid">
+            <div class="skill-card">Kotlin</div>
+            <div class="skill-card">Jetpack Compose</div>
+            <div class="skill-card">Firebase</div>
+            <div class="skill-card">REST API</div>
+            <div class="skill-card">Git & GitHub</div>
+            <div class="skill-card">Clean Architecture</div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects fade-in" id="projects">
+        <h2>Project Terbaru</h2>
+
+        <div class="project-card hover-up">
+            <div class="project-info">
+                <h3>Kas Digital</h3>
+                <p>Aplikasi pencatatan keuangan harian dengan mode kasir, catat transaksi, hutang, dan ringkasan pengeluaran.</p>
+                <span class="tech">Kotlin • Jetpack Compose • Firebase</span>
+                <a href="kas-digital.html" class="detail-btn">Detail Project</a>
+            </div>
+        </div>
+
+        <div class="project-card hover-up">
+            <div class="project-info">
+                <h3>Wirid Salafiyah</h3>
+                <p>Aplikasi wirid dengan audio, jadwal, dan pengingat harian untuk memudahkan pengguna dalam beribadah.</p>
+                <span class="tech">Kotlin • XML • Local Database</span>
+                <a href="wirid-salafiyah.html" class="detail-btn">Detail Project</a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="cta fade-in">
+        <h2>Siap bekerja sama?</h2>
+        <p>Ayo diskusikan project aplikasi Android yang ingin kamu bangun.</p>
+        <a href="https://wa.me/62880026311990" target="_blank" class="btn-primary">Hubungi Saya</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <h2>Kontak</h2>
+        <p>Email: <strong><a href="mailto:andriyan.dev@gmail.com" class="footer-link">andriyan.dev@gmail.com</a></strong></p>
+        <p>GitHub: <strong><a href="https://github.com/andriyan" target="_blank" rel="noopener noreferrer" class="footer-link">github.com/andriyan</a></strong></p>
+        <p>LinkedIn: <strong><a href="https://linkedin.com/in/andriyan" target="_blank" rel="noopener noreferrer" class="footer-link">linkedin.com/in/andriyan</a></strong></p>
+        <p class="copy">© 2026 Andriyan — All Rights Reserved</p>
+    </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
