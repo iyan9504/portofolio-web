@@ -30,9 +30,20 @@ themeToggle.addEventListener('click', () => {
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
+function toggleMenu() {
+  const isActive = navLinks.classList.toggle('active');
   hamburger.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', isActive);
+}
+
+hamburger.addEventListener('click', toggleMenu);
+
+// Keyboard accessibility for hamburger
+hamburger.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    toggleMenu();
+  }
 });
 
 // Close hamburger menu saat nav link diklik
@@ -40,6 +51,7 @@ navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('open');
     navLinks.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
   });
 });
 
@@ -63,25 +75,44 @@ faders.forEach(fader => {
 });
 
 // ====== ACTIVE NAVIGATION STATE ======
-const navLinks = document.querySelectorAll('.nav-links a');
+const navAnchors = document.querySelectorAll('.nav-links a');
 const sections = document.querySelectorAll('section, header');
 
-window.addEventListener('scroll', () => {
-  let current = '';
-  
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    
-    if (pageYOffset >= sectionTop - 200) {
-      current = section.getAttribute('id');
-    }
-  });
+let ticking = false;
 
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href').slice(1) === current) {
-      link.classList.add('active');
-    }
-  });
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        
+        if (pageYOffset >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navAnchors.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) {
+          link.classList.add('active');
+        }
+      });
+
+      ticking = false;
+    });
+    ticking = true;
+  }
+}, { passive: true });
+
+// ====== PRELOADER ======
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    preloader.classList.add('fade-out');
+    setTimeout(() => {
+      preloader.style.display = 'none';
+    }, 500);
+  }
 });

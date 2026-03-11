@@ -3,18 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portofolio umum — showcase karya audio, visual, desain grafis, dan teknologi.">
+  <meta name="description" content="Portofolio profesional Andriyan Maulana — Showcase karya audio mixing, fotografi, videografi, desain grafis, dan teknologi web/mobile development.">
+  <meta name="keywords" content="Portofolio, Audio Mixing, Fotografi, Videografi, Desain Grafis, Web Development, Android Development, JavaScript, Kotlin">
+  <meta name="author" content="Andriyan Maulana">
   <meta name="theme-color" content="#4f8dfd">
-  <meta property="og:title" content="Portofolio Umum — Audio, Visual & Teknologi">
-  <meta property="og:description" content="Koleksi project audio mixing, fotografi, desain grafis, dan website coding.">
+  <meta name="language" content="Indonesian">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';">
+  
+  <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
-  <meta name="robots" content="index, follow">
-  <title>Portofolio Umum — Audio, Visual & Teknologi</title>
+  <meta property="og:title" content="Andriyan Maulana — Portofolio Kreatif & Teknologi">
+  <meta property="og:description" content="Showcase karya profesional dalam audio mixing, fotografi, desain grafis, dan pengembangan website/aplikasi mobile.">
+  <meta property="og:site_name" content="Andriyan Maulana">
+  <meta property="og:locale" content="id_ID">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Andriyan Maulana — Portofolio Kreatif & Teknologi">
+  <meta name="twitter:description" content="Showcase karya profesional dalam audio mixing, fotografi, desain grafis, dan pengembangan website/aplikasi mobile.">
+  
+  <!-- Robots & Crawling -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://andriyans-portfolio.vercel.app/">
+  
+  <title>Andriyan Maulana — Portofolio Audio, Visual & Teknologi</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%234f8dfd'>P</text></svg>">
-  <link rel="stylesheet" href="style.css">
+  
+  <!-- Preload Font untuk performa -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" as="style">
+  <link rel="stylesheet" href="style.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Andriyan Maulana",
+    "url": "https://andriyans-portfolio.vercel.app/",
+    "jobTitle": "Creative Professional & Technology Enthusiast",
+    "description": "Audio Engineer, Photographer, Graphic Designer, Web & Android Developer",
+    "email": "iyanitem9504@gmail.com",
+    "sameAs": [
+      "https://github.com/iyan9504",
+      "https://instagram.com/andryanmlnaa_"
+    ],
+    "knowsAbout": [
+      "Audio Mixing",
+      "Recording",
+      "Photography",
+      "Videography",
+      "Graphic Design",
+      "HTML & CSS",
+      "JavaScript",
+      "Android Development",
+      "Kotlin",
+      "Jetpack Compose"
+    ]
+  }
+  </script>
 </head>
 <body>
+  <!-- PRELOADER -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <div class="preloader-icon">🎨</div>
+      <div class="preloader-text">Loading Portfolio...</div>
+      <div class="preloader-spinner"></div>
+    </div>
+  </div>
+
+  <!-- SKIP LINK FOR KEYBOARD ACCESSIBILITY -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- NAVBAR -->
   <nav class="navbar">
@@ -44,17 +105,18 @@
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
       </button>
-      <div class="hamburger" id="hamburger">
+      <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" role="button" tabindex="0">
         <span></span><span></span><span></span>
       </div>
     </div>
   </nav>
 
+  <main id="main-content">
   <!-- HERO -->
   <header class="hero" id="hero">
     <div class="hero-content fade-up">
       <div class="hero-title">
-        <svg class="hero-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg class="hero-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
           <polyline points="9 22 9 12 15 12 15 22"/>
         </svg>
@@ -81,14 +143,14 @@
   <!-- SKILLS -->
   <section class="skills fade-in" id="skills">
     <h2>
-      <svg class="section-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <svg class="section-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
       </svg>
       Bidang & Keahlian
     </h2>
     <div class="skill-grid">
-      <div class="skill-card">Audio Mixing</div>
-      <div class="skill-card">Recording</div>
+      <div class="skill-card">Audio Mixing & Mastering</div>
+      <div class="skill-card">Audio Recording</div>
       <div class="skill-card">Fotografi</div>
       <div class="skill-card">Videografi</div>
       <div class="skill-card">Desain Grafis</div>
@@ -101,7 +163,7 @@
   <!-- PROJECTS -->
   <section class="projects fade-in" id="projects">
     <h2>
-      <svg class="section-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <svg class="section-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
         <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
         <path d="M16 3h-4a2 2 0 0 0-2 2v3H8a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2z"/>
       </svg>
@@ -110,42 +172,42 @@
 
     <div class="project-category">
       <h3>🎧 Audio Mixing & Recording</h3>
-      <div class="project-card hover-up">
+      <article class="project-card hover-up">
         <div class="project-info">
-          <h3>Demo Mixing</h3>
+          <h4>Demo Mixing</h4>
           <p>Contoh hasil mixing audio sederhana.</p>
           <a href="audio-demo.html" class="detail-btn">Detail Project</a>
         </div>
-      </div>
+      </article>
     </div>
 
     <div class="project-category">
       <h3>📸 Fotografi & Videografi</h3>
-      <div class="project-card hover-up">
+      <article class="project-card hover-up">
         <div class="project-info">
-          <h3>Photo Gallery</h3>
+          <h4>Photo Gallery</h4>
           <p>Kumpulan foto hasil eksplorasi kamera.</p>
           <a href="gallery.html" class="detail-btn">Detail Project</a>
         </div>
-      </div>
+      </article>
     </div>
 
     <div class="project-category">
       <h3>🎨 Desain Grafis</h3>
-      <div class="project-card hover-up">
+      <article class="project-card hover-up">
         <div class="project-info">
-          <h3>Poster Design</h3>
+          <h4>Poster Design</h4>
           <p>Desain poster sederhana dengan tools grafis.</p>
           <a href="poster.html" class="detail-btn">Detail Project</a>
         </div>
-      </div>
+      </article>
     </div>
 
     <div class="project-category">
       <h3>💻 Programing</h3>
-      <div class="project-card hover-up">
+      <article class="project-card hover-up">
         <div class="project-info">
-          <h3>Portfolio Website</h3>
+          <h4>Portfolio Website</h4>
           <p>Website sederhana untuk showcase project.</p>
           <a href="portfolio.html" class="detail-btn">Detail Project</a>
         </div>
@@ -160,8 +222,10 @@
     <a href="https://wa.me/6288002631990" target="_blank" class="btn-primary">Hubungi Saya</a>
   </section>
 
+  </main>
+
   <!-- FOOTER -->
-  <footer id="contact">
+  <footer id="contact" role="contentinfo">
     <h2>Kontak</h2>
     <p>Email: <strong><a href="mailto:iyanitem9504@gmail.com" class="footer-link">iyanitem9504@gmail.com</a></strong></p>
     <p>GitHub: <strong><a href="https://github.com/iyan9504" target="_blank" rel="noopener noreferrer" class="footer-link">github.com/iyan9504</a></strong></p>
@@ -169,6 +233,6 @@
     <p class="copy">© 2026 Andriyan Maulana — All Rights Reserved</p>
   </footer>
 
-<script src="script.js"></script>
+<script src="script.min.js"></script>
 </body>
 </html>
